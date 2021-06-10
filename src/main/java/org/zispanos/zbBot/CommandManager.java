@@ -43,6 +43,7 @@ public class CommandManager {
         addCommand(new UnzorCommand());
         addCommand(new CramCommand());
         addCommand(new AmongusCommand());
+        addCommand(new FurryCommand());
     }
 
     private void addCommand(ICommand command) {
