@@ -130,6 +130,38 @@ class Listener extends ListenerAdapter {
             event.getChannel().sendMessage(embed.build()).queue();
             return;
         }
+        if (msg.contains("punto aternos".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("No mandes la ip de tu servidor aqui " + author.getName());
+            embed.setColor(Color.RED);
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
+        if (msg.contains(".holly.".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("No mandes la ip de tu servidor aqui " + author.getName());
+            embed.setColor(Color.RED);
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
+        if (msg.contains("punto me".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("No mandes la ip de tu servidor aqui " + author.getName());
+            embed.setColor(Color.RED);
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
+        if (msg.contains("uwunzor.net".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("NO. " + author.getName());
+            embed.setColor(Color.RED);
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
 }
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
