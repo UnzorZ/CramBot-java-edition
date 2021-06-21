@@ -19,7 +19,7 @@ public class HelpCommand implements ICommand {
         embed.addField("Comandos de 2b2t","Haz click en 🎮 para mostrar la pagina de los comandos de 2b2t",false);
         embed.addField("Comandos de administracion","Haz click en 🔧 para mostrar la pagina de los comandos de administracion",false);
         embed.addField("Eliminar mensaje","Haz click en 🗑️ para eliminar el mensaje",false);
-        embed.setFooter("La ayuda que necesitabas!","https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
+        embed.setFooter("La ayuda que necesitabas!",event.getGuild().getIconUrl());
         event.getChannel().sendMessage(embed.build()).queue(message -> {
             message.addReaction("💬").queue();
             message.addReaction("🎧").queue();
