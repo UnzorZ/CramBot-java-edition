@@ -13,6 +13,7 @@ public class Constants {
     public static final List<String> donatormotd = new ArrayList<>();
     public static final List<String> blacklistedaternos = new ArrayList<>();
     public static final List<String> randommotd = new ArrayList<>();
+    public static final List<String> dadjoke = new ArrayList<>();
     public static String lastSearch;
 
 }

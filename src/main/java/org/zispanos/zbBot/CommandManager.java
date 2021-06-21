@@ -44,6 +44,7 @@ public class CommandManager {
         addCommand(new CramCommand());
         addCommand(new AmongusCommand());
         addCommand(new FurryCommand());
+        addCommand(new DadJokeCommand());
     }
 
     private void addCommand(ICommand command) {
