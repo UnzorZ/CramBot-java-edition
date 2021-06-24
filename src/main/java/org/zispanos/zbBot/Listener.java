@@ -162,22 +162,7 @@ class Listener extends ListenerAdapter {
             event.getChannel().sendMessage(embed.build()).queue();
             return;
         }
-        if (msg.contains("\u200C".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            EmbedBuilder embed = new EmbedBuilder();
-            embed.setTitle("No intentes hacer el bypass de ElegantWaffle, " + author.getName());
-            embed.setColor(Color.RED);
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("\u200D".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            EmbedBuilder embed = new EmbedBuilder();
-            embed.setTitle("No intentes hacer el bypass de ElegantWaffle, " + author.getName());
-            embed.setColor(Color.RED);
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
+
 }
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
