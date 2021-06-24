@@ -162,7 +162,6 @@ class Listener extends ListenerAdapter {
             event.getChannel().sendMessage(embed.build()).queue();
             return;
         }
-
 }
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
