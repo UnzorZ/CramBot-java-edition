@@ -161,6 +161,7 @@ class Listener extends ListenerAdapter {
             embed.setColor(Color.RED);
             event.getChannel().sendMessage(embed.build()).queue();
             return;
+            
         }
 }
     @Override
