@@ -27,6 +27,6 @@ public class BasedCommand implements ICommand{
 
     @Override
     public String getInvoke() {
-        return "penis";
+        return "based";
     }
 }
