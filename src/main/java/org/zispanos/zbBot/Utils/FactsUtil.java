@@ -8,7 +8,7 @@ public class FactsUtil {
     private static int prevNum;
     private static String donatormotd;
     private static String dadjoke;
-    private static String penis;
+    private static String porcentajes;
     private static String cope;
     private static String based;
     private static String virgin;
@@ -43,14 +43,14 @@ public class FactsUtil {
         dadjoke = Constants.dadjoke.get(randomNum);
         return dadjoke;
     }
-    public static String getPenis() {
+    public static String getPorcentajes() {
         randomNum = (int) (Math.random() * (100));
         if (randomNum == prevNum) {
             randomNum = (int) (Math.random() * (100));
         }
         prevNum = randomNum;
-        penis = Constants.penis.get(randomNum);
-        return penis;
+        porcentajes = Constants.penis.get(randomNum);
+        return porcentajes;
     }
         public static void Load(){
 
