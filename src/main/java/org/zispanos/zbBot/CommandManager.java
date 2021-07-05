@@ -46,6 +46,7 @@ public class CommandManager {
         addCommand(new FurryCommand());
         addCommand(new DadJokeCommand());
         addCommand(new VerifyCommand());
+        addCommand(new PenisCommand());
     }
 
     private void addCommand(ICommand command) {

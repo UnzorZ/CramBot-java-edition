@@ -8,6 +8,12 @@ public class FactsUtil {
     private static int prevNum;
     private static String donatormotd;
     private static String dadjoke;
+    private static String penis;
+    private static String cope;
+    private static String based;
+    private static String virgin;
+    private static String cramfag;
+    private static String uwunzorfan;
 
 
     public static String getFact() {
@@ -36,6 +42,15 @@ public class FactsUtil {
         prevNum = randomNum;
         dadjoke = Constants.dadjoke.get(randomNum);
         return dadjoke;
+    }
+    public static String getPenis() {
+        randomNum = (int) (Math.random() * (100));
+        if (randomNum == prevNum) {
+            randomNum = (int) (Math.random() * (100));
+        }
+        prevNum = randomNum;
+        penis = Constants.penis.get(randomNum);
+        return penis;
     }
         public static void Load(){
 
@@ -287,5 +302,112 @@ public class FactsUtil {
             Constants.dadjoke.add("¿Qué pasa si juntas un chicle con una moto?. – Que tendrás una motochicleta.");
             Constants.dadjoke.add("¿Te cuento un chiste al revés?. – Bueno, pues primero ríete.");
             Constants.dadjoke.add("Mamá mamá en el colegio me dicen shampoo. – Ya Jhonson, no más lágrimas.");
+
+            /*  Carga los % de penis */
+
+            Constants.penis.add("0%");
+            Constants.penis.add("1%");
+            Constants.penis.add("2%");
+            Constants.penis.add("3%");
+            Constants.penis.add("4%");
+            Constants.penis.add("5%");
+            Constants.penis.add("6%");
+            Constants.penis.add("7%");
+            Constants.penis.add("8%");
+            Constants.penis.add("9%");
+            Constants.penis.add("10%");
+            Constants.penis.add("11%");
+            Constants.penis.add("12%");
+            Constants.penis.add("13%");
+            Constants.penis.add("14%");
+            Constants.penis.add("15%");
+            Constants.penis.add("16%");
+            Constants.penis.add("17%");
+            Constants.penis.add("18%");
+            Constants.penis.add("19%");
+            Constants.penis.add("20%");
+            Constants.penis.add("21%");
+            Constants.penis.add("22%");
+            Constants.penis.add("23%");
+            Constants.penis.add("24%");
+            Constants.penis.add("25%");
+            Constants.penis.add("26%");
+            Constants.penis.add("27%");
+            Constants.penis.add("28%");
+            Constants.penis.add("29%");
+            Constants.penis.add("30%");
+            Constants.penis.add("31%");
+            Constants.penis.add("32%");
+            Constants.penis.add("33%");
+            Constants.penis.add("34%");
+            Constants.penis.add("35%");
+            Constants.penis.add("36%");
+            Constants.penis.add("37%");
+            Constants.penis.add("38%");
+            Constants.penis.add("39%");
+            Constants.penis.add("40%");
+            Constants.penis.add("41%");
+            Constants.penis.add("42%");
+            Constants.penis.add("43%");
+            Constants.penis.add("44%");
+            Constants.penis.add("45%");
+            Constants.penis.add("46%");
+            Constants.penis.add("47%");
+            Constants.penis.add("48%");
+            Constants.penis.add("49%");
+            Constants.penis.add("50%");
+            Constants.penis.add("51%");
+            Constants.penis.add("52%");
+            Constants.penis.add("53%");
+            Constants.penis.add("54%");
+            Constants.penis.add("55%");
+            Constants.penis.add("56%");
+            Constants.penis.add("57%");
+            Constants.penis.add("58%");
+            Constants.penis.add("59%");
+            Constants.penis.add("60%");
+            Constants.penis.add("61%");
+            Constants.penis.add("62%");
+            Constants.penis.add("63%");
+            Constants.penis.add("64%");
+            Constants.penis.add("65%");
+            Constants.penis.add("66%");
+            Constants.penis.add("67%");
+            Constants.penis.add("68%");
+            Constants.penis.add("69% Nice number");
+            Constants.penis.add("70%");
+            Constants.penis.add("71%");
+            Constants.penis.add("72%");
+            Constants.penis.add("73%");
+            Constants.penis.add("74%");
+            Constants.penis.add("75%");
+            Constants.penis.add("76%");
+            Constants.penis.add("77%");
+            Constants.penis.add("78%");
+            Constants.penis.add("79%");
+            Constants.penis.add("80%");
+            Constants.penis.add("81%");
+            Constants.penis.add("82%");
+            Constants.penis.add("83%");
+            Constants.penis.add("84%");
+            Constants.penis.add("85%");
+            Constants.penis.add("86%");
+            Constants.penis.add("87%");
+            Constants.penis.add("88%");
+            Constants.penis.add("89%");
+            Constants.penis.add("90%");
+            Constants.penis.add("91%");
+            Constants.penis.add("92%");
+            Constants.penis.add("93%");
+            Constants.penis.add("94%");
+            Constants.penis.add("95%");
+            Constants.penis.add("96%");
+            Constants.penis.add("97%");
+            Constants.penis.add("98%");
+            Constants.penis.add("99%");
+            Constants.penis.add("100%");
+
+
+
         }
     }
