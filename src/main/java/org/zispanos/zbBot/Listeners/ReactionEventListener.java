@@ -43,21 +43,31 @@ public class ReactionEventListener extends ListenerAdapter {
                     if (emote.getEmoji().equals("💬")) {
                         event.getReaction().removeReaction(event.getUser()).queue();
                         EmbedBuilder embed = new EmbedBuilder();
-                        embed.setTitle("Misc Commands Help page");
+                        embed.setTitle("Comandos Miscelaneos");
                         embed.addField("$help", "Muestra la pagina de ayuda", true);
-                        embed.addField("$ping", "Muestra el ping que tiene el bot a los servidores de discord", true);
                         embed.addField("$botinfo", "Muestra informacion sobre el bot", true);
-                        embed.addField("$getemote", "Roba emotes de otro servidor. Uso : $getemote {emote} ", true);
                         embed.addField("$ranks", "Obten información de los rangos del servidor de MrCramYT", true);
-                        embed.addField("$cat", "Envia una imagen random de un gato", true);
-                        embed.addField("$dog", "Envia una imagen random de un perro", true);
-                        embed.addField("$floppa", "Easter egg", true);
-                        embed.addField("$studycat", "Gato estudiante, sean como el niños", true);
                         embed.addField("$avatar/$av", "Envia tu avatar", true);
                         embed.addField("$info", "Envia información en tiempo real acerca del bot", true);
                         embed.addField("$serverinfo", "Envia información sobre el servidor. Comando acortado: $si", true);
                         embed.addField("$vote", "Inicia una votación. Uso: $vote. El bot te preguntará como quieres la votación acto seguido", true);
                         embed.addField("$whois", "Información detallada sobre un usuario. Uso: $whois @[usuario]", true);
+
+                        embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
+                        embed.setColor(7279795);
+                        event.getChannel().sendMessage(embed.build()).queue(misc -> misc.addReaction("🗑️").queue());
+
+                    }
+                    if (emote.getEmoji().equals("😂")) {
+                        event.getReaction().removeReaction(event.getUser()).queue();
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("Comandos divertidos");
+                        embed.addField("$getemote", "Roba emotes de otro servidor. Uso : $getemote {emote} ", true);
+                        embed.addField("$ping", "Muestra el ping que tiene el bot a los servidores de discord", true);
+                        embed.addField("$cat", "Envia una imagen random de un gato", true);
+                        embed.addField("$dog", "Envia una imagen random de un perro", true);
+                        embed.addField("$floppa", "Easter egg", true);
+                        embed.addField("$studycat", "Gato estudiante, sean como el niños", true);
                         embed.addField("$amongus", "sus", true);
                         embed.addField("$based", "Te dice lo basado que eres", true);
                         embed.addField("cope", "Te dice lo cope que eres", true);
@@ -67,11 +77,9 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$penis", "Te dice el % de pene que tienes (no nsfw)", true);
                         embed.addField("$uwunzorfag", "Te dice lo uwunzorfag que eres", true);
                         embed.addField("$virgin", "Te dice lo virgen que eres", true);
-
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
-                        event.getChannel().sendMessage(embed.build()).queue(misc -> misc.addReaction("🗑️").queue());
-
+                        event.getChannel().sendMessage(embed.build()).queue(game -> game.addReaction("🗑️").queue());
                     }
                     if (emote.getEmoji().equals("🎧")) {
                         event.getReaction().removeReaction(event.getUser()).queue();
@@ -91,7 +99,7 @@ public class ReactionEventListener extends ListenerAdapter {
                     if (emote.getEmoji().equals("🎮")) {
                         event.getReaction().removeReaction(event.getUser()).queue();
                         EmbedBuilder embed = new EmbedBuilder();
-                        embed.setTitle("2b2t commands help page");
+                        embed.setTitle("Comandos de 2b2t");
                         embed.addField("$prioq", "Muestra la cola actual en 2b2t", true);
                         embed.addField("$seen {username}", "Ultima vez visto a una persona", true);
                         embed.addField("$stats {username}", "Muestra las estadisticas de una persona", true);
@@ -130,7 +138,7 @@ public class ReactionEventListener extends ListenerAdapter {
 
                         } else {
                             EmbedBuilder embed = new EmbedBuilder();
-                            embed.setTitle("Help for CramBot");
+                            embed.setTitle("Ayuda de crambot");
                             embed.setColor(Color.red);
                             embed.setDescription("No tienes permiso para ver esta pagina!");
                             embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
