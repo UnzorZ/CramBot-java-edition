@@ -16,7 +16,7 @@ public class PenisCommand implements ICommand{
 
 
         embed.setDescription(FactsUtil.getPorcentajes() + " penis.");
-        embed.setAuthor(event.getAuthor().getAsTag(), null, event.getAuthor().getAvatarUrl());
+        embed.setAuthor(event.getAuthor().getAsTag(), "https://www.youtube.com/watch?v=dQw4w9WgXcQ", event.getAuthor().getAvatarUrl());
         embed.setColor(Color.pink);
         event.getChannel().sendMessage(embed.build()).queue();
     }
