@@ -9,11 +9,6 @@ public class FactsUtil {
     private static String donatormotd;
     private static String dadjoke;
     private static String porcentajes;
-    private static String cope;
-    private static String based;
-    private static String virgin;
-    private static String cramfag;
-    private static String uwunzorfan;
 
 
     public static String getFact() {

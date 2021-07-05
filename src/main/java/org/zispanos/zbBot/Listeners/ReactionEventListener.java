@@ -58,6 +58,15 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$serverinfo", "Envia información sobre el servidor. Comando acortado: $si", true);
                         embed.addField("$vote", "Inicia una votación. Uso: $vote. El bot te preguntará como quieres la votación acto seguido", true);
                         embed.addField("$whois", "Información detallada sobre un usuario. Uso: $whois @[usuario]", true);
+                        embed.addField("$amongus", "sus", true);
+                        embed.addField("$based", "Te dice lo basado que eres", true);
+                        embed.addField("cope", "Te dice lo cope que eres", true);
+                        embed.addField("$cramfag", "Te dice lo cramfag que eres", true);
+                        embed.addField("$dadjoke", "Envia una dadjoke", true);
+                        embed.addField("$furry", "Envia una foto de un furro", true);
+                        embed.addField("$penis", "Te dice el % de pene que tienes (no nsfw)", true);
+                        embed.addField("$uwunzorfag", "Te dice lo uwunzorfag que eres", true);
+                        embed.addField("$virgin", "Te dice lo virgen que eres", true);
 
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
