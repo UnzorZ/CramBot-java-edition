@@ -47,6 +47,11 @@ public class CommandManager {
         addCommand(new DadJokeCommand());
         addCommand(new VerifyCommand());
         addCommand(new PenisCommand());
+        addCommand(new CopeCommand());
+        addCommand(new BasedCommand());
+        addCommand(new CramfagCommand());
+        addCommand(new VirginCommand());
+        addCommand(new UwunzorfagCommand());
     }
 
     private void addCommand(ICommand command) {
