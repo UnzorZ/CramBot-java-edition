@@ -14,9 +14,9 @@ public class PenisCommand implements ICommand{
     public void handle(List<String> args, GuildMessageReceivedEvent event) throws IOException {
         EmbedBuilder embed = new EmbedBuilder();
 
-        embed.setTitle("Penis");
-        embed.setDescription(FactsUtil.getPorcentajes());
-        embed.setFooter("Preguntado por: " + event.getAuthor().getName(), event.getGuild().getIconUrl());
+
+        embed.setDescription(FactsUtil.getPorcentajes() + " penis.");
+        embed.setAuthor(event.getAuthor().getAsTag(), null, event.getAuthor().getAvatarUrl());
         embed.setColor(Color.pink);
         event.getChannel().sendMessage(embed.build()).queue();
     }
