@@ -7,15 +7,11 @@ import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
-import org.zispanos.zbBot.Music.PlayerManager;
 import org.zispanos.zbBot.Objects.Constants;
 import org.zispanos.zbBot.Utils.MemberUtil;
 
 import java.awt.*;
-import java.util.Arrays;
 import java.util.Objects;
-
-import static org.zispanos.zbBot.Utils.splitToComponentTimes.splitToComponentTimes;
 
 
 public class ReactionEventListener extends ListenerAdapter {
