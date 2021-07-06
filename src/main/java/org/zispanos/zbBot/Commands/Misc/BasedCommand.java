@@ -12,12 +12,11 @@ import java.util.List;
 public class BasedCommand implements ICommand{
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) throws IOException {
-        EmbedBuilder embed = new EmbedBuilder();
-
-        embed.setDescription(FactsUtil.getPorcentajes() + " based.");
-        embed.setAuthor(event.getAuthor().getAsTag(), "https://www.youtube.com/watch?v=dQw4w9WgXcQ", event.getAuthor().getAvatarUrl());
-        embed.setColor(Color.pink);
-        event.getChannel().sendMessage(embed.build()).queue();
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setDescription(FactsUtil.getPorcentajes() + " based.");
+            embed.setAuthor(event.getAuthor().getAsTag(), "https://www.youtube.com/watch?v=dQw4w9WgXcQ", event.getAuthor().getAvatarUrl());
+            embed.setColor(Color.pink);
+            event.getChannel().sendMessage(embed.build()).queue();
     }
 
     @Override
