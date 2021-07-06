@@ -66,7 +66,7 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$studycat", "Gato estudiante, sean como el niños", true);
                         embed.addField("$amongus", "sus", true);
                         embed.addField("$based", "Te dice lo basado que eres", true);
-                        embed.addField("cope", "Te dice lo cope que eres", true);
+                        embed.addField("$cope", "Te dice lo cope que eres", true);
                         embed.addField("$cramfag", "Te dice lo cramfag que eres", true);
                         embed.addField("$dadjoke", "Envia una dadjoke", true);
                         embed.addField("$furry", "Envia una foto de un furro", true);
