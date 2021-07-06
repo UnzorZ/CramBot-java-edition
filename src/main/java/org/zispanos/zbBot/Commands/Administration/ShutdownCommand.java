@@ -36,8 +36,7 @@ public class ShutdownCommand implements ICommand {
                     EmbedBuilder ShutdownEB = new EmbedBuilder();
                     ShutdownEB.setTitle("Shutting down ");
                     ShutdownEB.setColor(Color.orange);
-                    ShutdownEB.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
-                    ShutdownEB.setFooter("The bot got Backdoored", "https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
+                    ShutdownEB.setFooter("The bot got Backdoored", event.getAuthor().getAvatarUrl());
                     ShutdownEB.setDescription("Looks like " + event.getAuthor().getName() + " ended the party for today \uD83D\uDE2D");
                     event.getChannel().sendMessage(ShutdownEB.build()).queue(message -> message.addReaction("🗑️").queue());
                     shutdown(event.getJDA());
