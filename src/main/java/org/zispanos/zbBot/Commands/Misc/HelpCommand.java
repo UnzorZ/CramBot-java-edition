@@ -21,6 +21,7 @@ public class HelpCommand implements ICommand {
         embed.addField("Comandos de administracion","Haz click en 🔧 para mostrar la pagina de los comandos de administracion",false);
         embed.addField("Eliminar mensaje","Haz click en 🗑️ para eliminar el mensaje",false);
         embed.setFooter("La ayuda que necesitabas " + event.getAuthor().getName() + "!",event.getGuild().getIconUrl());
+        embed.setColor(7279795);
         event.getChannel().sendMessage(embed.build()).queue(message -> {
             message.addReaction("💬").queue();
             message.addReaction("😂").queue();
