@@ -52,6 +52,7 @@ public class CommandManager {
         addCommand(new CramfagCommand());
         addCommand(new VirginCommand());
         addCommand(new UwunzorfagCommand());
+        addCommand(new InviteCommand());
     }
 
     private void addCommand(ICommand command) {
