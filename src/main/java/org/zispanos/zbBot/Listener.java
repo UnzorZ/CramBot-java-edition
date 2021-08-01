@@ -48,20 +48,20 @@ class Listener extends ListenerAdapter {
         }
         String msg = event.getMessage().getContentRaw();
         if (!event.getMessage().getAuthor().isBot()) {
-            if (msg.startsWith("yo soy un".toLowerCase())) {
-                event.getChannel().sendMessage(("Hola " + msg.replace("yo soy un", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
+            if (msg.startsWith("yo soy un ".toLowerCase())) {
+                event.getChannel().sendMessage(("Hola " + msg.replace("yo soy un ", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
                 return;
             }
-            if (msg.startsWith("Soy un".toLowerCase())) {
-                event.getChannel().sendMessage(("Hola " + msg.replace("soy un", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
+            if (msg.startsWith("Soy un ".toLowerCase())) {
+                event.getChannel().sendMessage(("Hola " + msg.replace("soy un ", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
                 return;
             }
-            if (msg.startsWith("Yo soy".toLowerCase())) {
-                event.getChannel().sendMessage(("Hola " + msg.replace("yo soy", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
+            if (msg.startsWith("Yo soy ".toLowerCase())) {
+                event.getChannel().sendMessage(("Hola " + msg.replace("yo soy ", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
                 return;
             }
-            if (msg.startsWith("Soy".toLowerCase(Locale.ROOT))) {
-                event.getChannel().sendMessage(("Hola " + msg.replace("yo soy", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
+            if (msg.startsWith("Soy ".toLowerCase(Locale.ROOT))) {
+                event.getChannel().sendMessage(("Hola " + msg.replace("yo soy ", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
             }
             if (msg.contains(".aternos".toLowerCase(Locale.ROOT))) {
                 event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
@@ -78,7 +78,7 @@ class Listener extends ListenerAdapter {
                 embed.setColor(Color.RED);
                 event.getChannel().sendMessage(embed.build()).queue();
                 return;
-            }
+        }
 
         }
         if (msg.contains(". at3rn0s".toLowerCase(Locale.ROOT))) {
@@ -160,8 +160,6 @@ class Listener extends ListenerAdapter {
             embed.setTitle("NO. " + author.getName());
             embed.setColor(Color.RED);
             event.getChannel().sendMessage(embed.build()).queue();
-            return;
-            
         }
 }
     @Override
