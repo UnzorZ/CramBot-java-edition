@@ -48,7 +48,7 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$serverinfo", "Envia información sobre el servidor. Comando acortado: $si", true);
                         embed.addField("$vote", "Inicia una votación. Uso: $vote. El bot te preguntará como quieres la votación acto seguido", true);
                         embed.addField("$whois", "Información detallada sobre un usuario. Uso: $whois @[usuario]", true);
-
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
                         event.getChannel().sendMessage(embed.build()).queue(misc -> misc.addReaction("🗑️").queue());
@@ -75,6 +75,7 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$virgin", "Te dice lo virgen que eres", true);
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         event.getChannel().sendMessage(embed.build()).queue(game -> game.addReaction("🗑️").queue());
                     }
                     if (emote.getEmoji().equals("🎧")) {
@@ -90,6 +91,7 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$public", "Elimina el bloqueo anterior y hace publico el canal", true);
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         event.getChannel().sendMessage(embed.build()).queue(music -> music.addReaction("🗑️").queue());
                     }
                     if (emote.getEmoji().equals("🎮")) {
@@ -100,6 +102,7 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField("$seen {username}", "Ultima vez visto a una persona", true);
                         embed.addField("$stats {username}", "Muestra las estadisticas de una persona", true);
                         embed.addField("$tab", "Envia una foto del tab de 2b2t", true);
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
                         event.getChannel().sendMessage(embed.build()).queue(game -> game.addReaction("🗑️").queue());
@@ -127,7 +130,6 @@ public class ReactionEventListener extends ListenerAdapter {
                             embed.addField("$kick", "Creo que no necesita explicación", true);
                             embed.addField("$ban", "Creo que tampoco necesita explicación", true);
                             embed.addField("$setrpc", "Cambia el rpc del bot", true);
-
                             embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                             embed.setColor(7279795);
                             event.getChannel().sendMessage(embed.build()).queue(adm -> adm.addReaction("🗑️").queue());
