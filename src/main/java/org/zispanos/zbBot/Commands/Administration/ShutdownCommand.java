@@ -15,15 +15,22 @@ public class ShutdownCommand implements ICommand {
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
         event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+        boolean permissions = false;
 
-        boolean hasPerms = false;
-        for (String role : Constants.OProles) {
-            if (MemberUtil.getRole(Objects.requireNonNull(event.getMember()), role) != null) {
-                hasPerms = true;
-            }
+        if (event.getMember().getId().equals("758441764121608202")) {       /*  Unzor   */
+            permissions = true;
+        }
+        if (event.getMember().getId().equals("697040773203623976")) {       /*  Cobble   */
+            permissions = true;
+        }
+        if (event.getMember().getId().equals("512347088210886659")) {       /*  Empa    */
+            permissions = true;
+        }
+        if (event.getMember().getId().equals("315214772347863041")) {       /*  Omega   */
+            permissions = true;
         }
 
-        if (!hasPerms) {
+        if (permissions == false) {
             EmbedBuilder noperms = new EmbedBuilder();
             noperms.setTitle("Looks like you dont have perms to do this");
             noperms.setColor(Color.RED);
@@ -43,11 +50,6 @@ public class ShutdownCommand implements ICommand {
             }
         }
     }
-
-
-
-
-
 
     private void shutdown(JDA jda) {
         jda.shutdown();
