@@ -39,7 +39,6 @@ public class CommandManager {
         addCommand(new TabCommand());
         addCommand(new RanksCommand());
         addCommand(new ReglasCommand());
-        addCommand(new ReportCommand());
         addCommand(new UnzorCommand());
         addCommand(new CramCommand());
         addCommand(new AmongusCommand());
@@ -53,6 +52,7 @@ public class CommandManager {
         addCommand(new VirginCommand());
         addCommand(new UwunzorfagCommand());
         addCommand(new InviteCommand());
+        addCommand(new getHelpCommand());
     }
 
     private void addCommand(ICommand command) {

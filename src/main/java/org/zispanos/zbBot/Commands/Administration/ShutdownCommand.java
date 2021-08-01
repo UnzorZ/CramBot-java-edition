@@ -32,7 +32,8 @@ public class ShutdownCommand implements ICommand {
                     event.getChannel().sendMessage(noperms.build()).queue(message -> message.addReaction("🗑️").queue());
 
                 }else{
-
+                    Float id= 432645641441640448;
+                    if (event.getGuild().getIdLong(equals(id)))
                     EmbedBuilder ShutdownEB = new EmbedBuilder();
                     ShutdownEB.setTitle("Shutting down ");
                     ShutdownEB.setColor(Color.orange);
