@@ -10,6 +10,7 @@ public class FactsUtil {
     private static String dadjoke;
     private static String porcentajes;
     private static String penis;
+    private static String ball;
 
 
     public static String getFact() {
@@ -60,6 +61,15 @@ public class FactsUtil {
         prevNum = randomNum;
         porcentajes = Constants.penis.get(randomNum);
         return porcentajes;
+    }
+    public static String getBall() {
+        randomNum = (int) (Math.random() * (20));
+        if (randomNum == prevNum) {
+            randomNum = (int) (Math.random() * (20));
+        }
+        prevNum = randomNum;
+        ball = Constants.ball.get(randomNum);
+        return ball;
     }
 
     public static void Load() {
@@ -429,6 +439,29 @@ public class FactsUtil {
         Constants.penis.add("B=========D");
         Constants.penis.add("B===========D");
         Constants.penis.add("B=============D");
+
+        /*  8Ball   */
+
+        Constants.ball.add("✅ En mi opinión, sí");
+        Constants.ball.add("✅ Es cierto");
+        Constants.ball.add("✅ Es decididamente así");
+        Constants.ball.add("✅ Probablemente");
+        Constants.ball.add("✅ Buen pronóstico");
+        Constants.ball.add("✅ Todo apunta a que sí");
+        Constants.ball.add("✅ Sin duda");
+        Constants.ball.add("✅ Sí");
+        Constants.ball.add("✅ Sí - definitivamente");
+        Constants.ball.add("✅ Debes confiar en ello");
+        Constants.ball.add("❓ Respuesta vaga, vuelve a intentarlo");
+        Constants.ball.add("❓ Pregunta en otro momento");
+        Constants.ball.add("❓ Será mejor que no te lo diga ahora");
+        Constants.ball.add("❓ No puedo predecirlo ahora");
+        Constants.ball.add("❓ Concéntrate y vuelve a preguntar");
+        Constants.ball.add("❌ No cuentes con ello");
+        Constants.ball.add("❌ Mi respuesta es no");
+        Constants.ball.add("❌ Mis fuentes me dicen que no");
+        Constants.ball.add("❌ Las perspectivas no son buenas");
+        Constants.ball.add("❌ Muy dudoso");
 
     }
 }

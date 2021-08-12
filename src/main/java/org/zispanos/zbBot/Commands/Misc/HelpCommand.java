@@ -10,7 +10,6 @@ import java.util.List;
 public class HelpCommand implements ICommand {
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) throws InterruptedException, IOException{
-        event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
         EmbedBuilder embed = new EmbedBuilder();
         embed.setTitle("Help for the CramBot");
         embed.setImage(event.getGuild().getIconUrl());
