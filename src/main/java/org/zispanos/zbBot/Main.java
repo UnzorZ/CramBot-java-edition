@@ -3,6 +3,8 @@ package org.zispanos.zbBot;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
+import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.zispanos.zbBot.Listeners.ReactionEventListener;
@@ -19,8 +21,7 @@ public class Main extends ListenerAdapter {
 
     public static void main(String[] args) throws LoginException {
         FactsUtil.Load();
-        String token = "";
-        JDABuilder.createLight(token)
+        JDABuilder.createLight(TOKEN.token)
                 .setActivity(Activity.watching("MrCramYT"))
                 .setStatus(OnlineStatus.ONLINE)
                 .addEventListeners(listener, new Main(), new ReactionEventListener())
@@ -29,9 +30,64 @@ public class Main extends ListenerAdapter {
     }
 
     @Override
+    public void onGuildJoin(GuildJoinEvent event) {
+        super.onGuildJoin(event);
+        System.out.println("**************************************************************");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("" +
+                "░██╗░░░░░░░██╗░█████╗░██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░\n" +
+                "░██║░░██╗░░██║██╔══██╗██╔══██╗████╗░██║██║████╗░██║██╔════╝░\n" +
+                "░╚██╗████╗██╔╝███████║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░\n" +
+                "░░████╔═████║░██╔══██║██╔══██╗██║╚████║██║██║╚████║██║░░╚██╗\n" +
+                "░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝\n" +
+                "░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("" +
+                "███╗░░██╗███████╗░██╗░░░░░░░██╗░░░░░░░██████╗░██╗░░░██╗██╗██╗░░░░░██████╗\n" +
+                "████╗░██║██╔════╝░██║░░██╗░░██║░░░░░░██╔════╝░██║░░░██║██║██║░░░░░██╔══██╗\n" +
+                "██╔██╗██║█████╗░░░╚██╗████╗██╔╝░░░░░░██║░░██╗░██║░░░██║██║██║░░░░░██║░░██║\n" +
+                "██║╚████║██╔══╝░░░░████╔═████║░░░░░░░██║░░╚██╗██║░░░██║██║██║░░░░░██║░░██║\n" +
+                "██║░╚███║███████╗░░╚██╔╝░╚██╔╝░░░░░░░╚██████╔╝╚██████╔╝██║███████╗██████╔╝\n" +
+                "╚═╝░░╚══╝╚══════╝░░░╚═╝░░░╚═╝░░░░░░░░░╚═════╝░░╚═════╝░╚═╝╚══════╝╚═════╝");
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("**************************************************************");
+
+    }
+
+    @Override
+        public void onGuildLeave (GuildLeaveEvent event){
+            super.onGuildLeave(event);
+            System.out.println("**************************************************************");
+            System.out.println("--------------------------------------------------------------");
+            System.out.println("" +
+                    "░██╗░░░░░░░██╗░█████╗░██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░\n" +
+                    "░██║░░██╗░░██║██╔══██╗██╔══██╗████╗░██║██║████╗░██║██╔════╝░\n" +
+                    "░╚██╗████╗██╔╝███████║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░\n" +
+                    "░░████╔═████║░██╔══██║██╔══██╗██║╚████║██║██║╚████║██║░░╚██╗\n" +
+                    "░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝\n" +
+                    "░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("" +
+                    "░██████╗░██╗░░░██╗██╗██╗░░░░░██████╗░░░░░░░░██╗░░░░░███████╗███████╗████████╗\n" +
+                    "██╔════╝░██║░░░██║██║██║░░░░░██╔══██╗░░░░░░░██║░░░░░██╔════╝██╔════╝╚══██╔══╝\n" +
+                    "██║░░██╗░██║░░░██║██║██║░░░░░██║░░██║░░░░░░░██║░░░░░█████╗░░█████╗░░░░░██║░░░\n" +
+                    "██║░░╚██╗██║░░░██║██║██║░░░░░██║░░██║░░░░░░░██║░░░░░██╔══╝░░██╔══╝░░░░░██║░░░\n" +
+                    "╚██████╔╝╚██████╔╝██║███████╗██████╔╝░░░░░░░███████╗███████╗██║░░░░░░░░██║░░░\n" +
+                    "░╚═════╝░░╚═════╝░╚═╝╚══════╝╚═════╝░░░░░░░░╚══════╝╚══════╝╚═╝░░░░░░░░╚═╝░░░");
+            System.out.println("--------------------------------------------------------------");
+            System.out.println("**************************************************************");
+        }
+
+
+    //R80336
+    @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if (!event.getAuthor().isBot()) {
-            String MSG = ("Seems like we received a message from : " + event.getAuthor().getName() + " says " + event.getMessage().getContentDisplay());
+            String MSG = ("Seems like we received a message from \"" + event.getAuthor().getAsTag() + "\", aka \"" + event.getAuthor().getName() + "\" that says: " + event.getMessage().getContentDisplay());
             System.out.println("DEBUG: "+MSG);
         }
     }
