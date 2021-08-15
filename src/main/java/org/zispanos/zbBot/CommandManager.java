@@ -53,6 +53,16 @@ public class CommandManager {
         addCommand(new UwunzorfagCommand());
         addCommand(new InviteCommand());
         addCommand(new getHelpCommand());
+        addCommand(new EnglishCommand());
+        addCommand(new DebugCommand());
+        addCommand(new SayCommand());
+        addCommand(new BallCommand());
+        addCommand(new EmbedCreatorCommand());
+        addCommand(new setRPCCommand());
+        addCommand(new BanCommand());
+        addCommand(new PreguntadeldiaCommand());
+        addCommand(new KickCommand());
+        addCommand(new FurryNSFWCommand());
     }
 
     private void addCommand(ICommand command) {
