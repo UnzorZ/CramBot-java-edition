@@ -87,7 +87,7 @@ public class Main extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if (!event.getAuthor().isBot()) {
-            String MSG = ("Seems like we received a message from \"" + event.getAuthor().getAsTag() + "\", aka \"" + event.getAuthor().getName() + "\" that says: " + event.getMessage().getContentDisplay());
+            String MSG = ("Seems like we received a message from \"" + event.getAuthor().getAsTag() + "\", aka \"" + event.getAuthor().getName() + "\" in "+ event.getChannel().getName() + " that says: " + event.getMessage().getContentDisplay());
             System.out.println("DEBUG: "+MSG);
         }
     }
