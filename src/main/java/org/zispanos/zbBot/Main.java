@@ -11,6 +11,7 @@ import org.zispanos.zbBot.Listeners.ReactionEventListener;
 import org.zispanos.zbBot.Utils.FactsUtil;
 
 import javax.security.auth.login.LoginException;
+import java.io.File;
 import java.util.Random;
 
 public class Main extends ListenerAdapter {
@@ -26,7 +27,6 @@ public class Main extends ListenerAdapter {
                 .setStatus(OnlineStatus.ONLINE)
                 .addEventListeners(listener, new Main(), new ReactionEventListener())
                 .build();
-
     }
 
     @Override
