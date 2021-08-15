@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.zispanos.zbBot.Listeners.ReactionEventListener;
 import org.zispanos.zbBot.Utils.FactsUtil;
+import org.zispanos.zbBot.Utils.SQLite;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
@@ -21,6 +22,7 @@ public class Main extends ListenerAdapter {
     static Listener listener = new Listener(commandManager);
 
     public static void main(String[] args) throws LoginException {
+        SQLite.connect();
         FactsUtil.Load();
         JDABuilder.createLight(TOKEN.token)
                 .setActivity(Activity.watching("MrCramYT"))

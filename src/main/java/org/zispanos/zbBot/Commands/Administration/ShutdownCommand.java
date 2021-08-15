@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.zispanos.zbBot.Objects.Constants;
 import org.zispanos.zbBot.Objects.ICommand;
 import org.zispanos.zbBot.Utils.MemberUtil;
+import org.zispanos.zbBot.Utils.SQLite;
 
 import java.awt.*;
 import java.util.List;
@@ -53,6 +54,7 @@ public class ShutdownCommand implements ICommand {
 
     private void shutdown(JDA jda) {
         jda.shutdown();
+        SQLite.close();
         System.exit(0);
     }
 
