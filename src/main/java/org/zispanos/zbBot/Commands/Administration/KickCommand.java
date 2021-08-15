@@ -72,7 +72,6 @@ public class KickCommand implements ICommand {
                     event.getChannel().sendMessage(embed.build()).queue();
                 }
                 if (kickeable) {
-                    System.out.println(msg2);
                     event.getGuild().kick(msg2).queue();
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.setTitle("Usuario kickeado");

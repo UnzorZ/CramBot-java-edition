@@ -72,7 +72,6 @@ public class BanCommand implements ICommand {
                     event.getChannel().sendMessage(embed.build()).queue();
                 }
                 if (baneable) {
-                    System.out.println(msg2);
                     event.getGuild().ban(msg2, 0, "ban command").queue();
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.setTitle("Usuario baneado");
