@@ -17,6 +17,7 @@ public class Constants {
     public static final List<String> PORCENTAJES = new ArrayList<>();
     public static final List<String> ball = new ArrayList<>();
     public static final List<String> penis = new ArrayList<>();
+    public static final List<String> furry = new ArrayList<>();
     public static boolean english = false;
     public static String lastSearch;
 
