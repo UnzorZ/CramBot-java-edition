@@ -7,6 +7,7 @@ public class SQLite {
     private static Connection conn = null;
 
     public static void connect() {
+        System.out.println("Database has connected.");
         String database = "jdbc:sqlite:CramBot/Motds.sqlite";
                 try {
                     Class.forName("org.sqlite.JDBC");
@@ -33,6 +34,7 @@ public class SQLite {
 
     }
     public static void close() {
+        System.out.println("Database has been closed.");
         try {
             conn.close();
         } catch(Exception e) {
