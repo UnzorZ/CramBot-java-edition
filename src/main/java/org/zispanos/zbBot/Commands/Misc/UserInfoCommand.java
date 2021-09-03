@@ -1,75 +1,77 @@
 package org.zispanos.zbBot.Commands.Misc;
 
-import com.jagrosh.jdautilities.commons.utils.FinderUtil;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.zispanos.zbBot.Objects.Constants;
 import org.zispanos.zbBot.Objects.ICommand;
 
 import java.awt.*;
+import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class UserInfoCommand implements ICommand {
-
     @Override
-    public void handle(List<String> args, GuildMessageReceivedEvent event) {
-        EmbedBuilder embed1 = new EmbedBuilder();
-        embed1.setTitle("User Info:");
-        embed1.setColor(Color.blue);
+    public void handle(List<String> args, GuildMessageReceivedEvent event) throws IOException {
+
+        Member target = event.getMessage().getMentionedMembers().get(0);
+        OffsetDateTime fechacreacion = target.getTimeCreated();
+        Role rolmasalto = target.getRoles().get(0);
+        String idrol = rolmasalto.getId();
+        String msg = event.getMessage().getContentRaw();
+        List RoleList = target.getRoles();
+        int numberroles = RoleList.size();
+        String permisos = String.valueOf(target.getPermissionsExplicit());
+        String boosted = target.getTimeBoosted().format(DateTimeFormatter.ofPattern("yyyy-mm-dd"));
+
+
         if (args.isEmpty()) {
-            embed1.setDescription("Missing arguments, check " + Constants.PREFIX + "help ");
-            event.getChannel().sendMessage(embed1.build()).queue(message -> message.addReaction("🗑️").queue());
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            return;
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("Por favor, etiqueta a alguien para poder utilizar el comando.");
+            embed.setColor(Color.RED);
+            event.getChannel().sendMessage(embed.build()).queue();
+        } else {
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("Información sobre " + target.getUser().getName());
+            embed.addField("Nombre: ", target.getUser().getName(), false);
+            embed.addField("Nick: ", target.getNickname() == null ? "No tiene nick en este servidor" : target.getNickname(), false);
+            embed.addField("Nombre + tag: ", target.getUser().getName() + "#" + target.getUser().getDiscriminator(), false);
+            embed.addField("ID: ", target.getId(), false);
+            embed.addField("Mención: ", target.getAsMention(), false);
+            embed.addField("Fecha de creación: ", target.getTimeCreated().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), false);
+            embed.addField("Fecha de entrada al servidor: ", target.getTimeJoined().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), false);
+            embed.addField("Rol mas alto: ", "<@&" + idrol + ">", false);
+            embed.addField("Roles[" + numberroles + "]: ",getRolesAsString(target.getRoles()), false);
+            embed.addField("Boosteando desde: ", String.valueOf(boosted), false);
+            embed.setThumbnail(target.getUser().getAvatarUrl());
+            embed.setColor(target.getColor());
+            event.getChannel().sendMessage(embed.build()).queue();
         }
-
-        String joined = String.join("", args);
-        List<User> foundUsers = FinderUtil.findUsers(joined, event.getJDA());
-
-        if (foundUsers.isEmpty()) {
-
-            List<Member> foundMembers = FinderUtil.findMembers(joined, event.getGuild());
-
-            if (foundMembers.isEmpty()) {
-                embed1.setDescription("No users found for `" + joined + "`");
-                event.getChannel().sendMessage(embed1.build()).queue(message -> message.addReaction("🗑️").queue());
-                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-                return;
-            }
-
-            foundUsers = foundMembers.stream().map(Member::getUser).collect(Collectors.toList());
-
-        }
-
-        User user = foundUsers.get(0);
-        Member member = event.getGuild().getMember(user);
-
-       EmbedBuilder embed = new EmbedBuilder();
-       embed.setColor(Color.blue);
-       embed.setTitle("UserInfo");
-        embed.setThumbnail(user.getEffectiveAvatarUrl());
-        embed.addField("Username", String.format("%#s", user), false);
-        embed.addField("Display Name", member.getEffectiveName(), false);
-        embed.addField("User Id + Mention", String.format("%s (%s)", user.getId(), member.getAsMention()), false);
-        embed.addField("Account Created", user.getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
-        embed.addField("Time Joined", member.getTimeJoined().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
-        embed.addField("Online Status", member.getOnlineStatus().name().toLowerCase().replaceAll("_", " "), false);
-        embed.addField("Bot Account", user.isBot() ? "Yes" : "No", false);
-        event.getChannel().sendMessage(embed.build()).queue(message -> message.addReaction("🗑️").queue());
-        event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-
-
-
-
     }
+
+
+    private String getRolesAsString(List rolesList) {
+        String roles = "";
+        if (!rolesList.isEmpty()) {
+            Role tempRole = (Role) rolesList.get(0);
+            roles = "<@&" + tempRole.getId() + ">";
+            for (int i = 1; i < rolesList.size(); i++) {
+                tempRole = (Role) rolesList.get(i);
+                roles = roles + ", <@&" + tempRole.getId() + ">";
+            }
+        } else {
+            roles = "Sin roles";
+        }
+        return roles;
+}
 
     @Override
     public String getHelp() {
-        return "returns user info";
+        return null;
     }
 
     @Override
@@ -77,4 +79,3 @@ public class UserInfoCommand implements ICommand {
         return "ui";
     }
 }
-
