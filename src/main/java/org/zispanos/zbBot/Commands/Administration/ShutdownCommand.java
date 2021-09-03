@@ -46,7 +46,7 @@ public class ShutdownCommand implements ICommand {
                 ShutdownEB.setColor(Color.orange);
                 ShutdownEB.setFooter("The bot got Backdoored", event.getAuthor().getAvatarUrl());
                 ShutdownEB.setDescription("Looks like " + event.getAuthor().getName() + " ended the party for today \uD83D\uDE2D");
-                event.getChannel().sendMessage(ShutdownEB.build()).queue(message -> message.addReaction("🗑️").queue());
+                event.getChannel().sendMessage(ShutdownEB.build()).queue(message -> message.addReaction("").queue());
                 shutdown(event.getJDA());
             }
         }
