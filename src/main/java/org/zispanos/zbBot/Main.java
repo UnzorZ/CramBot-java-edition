@@ -12,7 +12,6 @@ import org.zispanos.zbBot.Utils.FactsUtil;
 import org.zispanos.zbBot.Utils.SQLite;
 
 import javax.security.auth.login.LoginException;
-import java.io.File;
 import java.util.Random;
 
 public class Main extends ListenerAdapter {
@@ -20,6 +19,7 @@ public class Main extends ListenerAdapter {
 
     static CommandManager commandManager = new CommandManager(random);
     static Listener listener = new Listener(commandManager);
+    static Listener log = new Listener(commandManager);
 
     public static void main(String[] args) throws LoginException {
         SQLite.connect();
@@ -89,7 +89,7 @@ public class Main extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if (!event.getAuthor().isBot()) {
-            String MSG = ("Seems like we received a message from \"" + event.getAuthor().getAsTag() + "\", aka \"" + event.getAuthor().getName() + "\" in "+ event.getChannel().getName() + " that says: " + event.getMessage().getContentDisplay());
+            String MSG = ("Seems like we received a message from \"" + event.getAuthor().getAsTag() + "\", aka \"" + event.getAuthor().getName() + "\" in "+ event.getChannel().getName() + "( " + event.getGuild().getName() + "  that says: " + event.getMessage().getContentDisplay());
             System.out.println("DEBUG: "+MSG);
         }
     }

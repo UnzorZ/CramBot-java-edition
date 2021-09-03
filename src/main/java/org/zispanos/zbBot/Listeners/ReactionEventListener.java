@@ -3,6 +3,7 @@ package org.zispanos.zbBot.Listeners;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageReaction;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -40,15 +41,15 @@ public class ReactionEventListener extends ListenerAdapter {
                         event.getReaction().removeReaction(event.getUser()).queue();
                         EmbedBuilder embed = new EmbedBuilder();
                         embed.setTitle("Comandos Miscelaneos");
-                        embed.addField("$help", "Muestra la pagina de ayuda", true);
-                        embed.addField("$botinfo", "Muestra informacion sobre el bot", true);
-                        embed.addField("$ranks", "Obten información de los rangos del servidor de MrCramYT", true);
-                        embed.addField("$avatar/$av", "Envia tu avatar", true);
-                        embed.addField("$info", "Envia información en tiempo real acerca del bot", true);
-                        embed.addField("$serverinfo", "Envia información sobre el servidor. Comando acortado: $si", true);
-                        embed.addField("$vote", "Inicia una votación. Uso: $vote. El bot te preguntará como quieres la votación acto seguido", true);
-                        embed.addField("$whois", "Información detallada sobre un usuario. Uso: $whois @[usuario]", true);
-                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
+                        embed.addField(Constants.PREFIX + "help", "Muestra la pagina de ayuda", true);
+                        embed.addField(Constants.PREFIX + "botinfo", "Muestra informacion sobre el bot", true);
+                        embed.addField(Constants.PREFIX + "ranks", "Obten información de los rangos del servidor de MrCramYT", true);
+                        embed.addField(Constants.PREFIX + "avatar/$av", "Envia tu avatar", true);
+                        embed.addField(Constants.PREFIX + "info", "Envia información en tiempo real acerca del bot", true);
+                        embed.addField(Constants.PREFIX + "serverinfo", "Envia información sobre el servidor. Comando acortado: $si", true);
+                        embed.addField(Constants.PREFIX + "vote", "Inicia una votación. Uso: $vote. El bot te preguntará como quieres la votación acto seguido", true);
+                        embed.addField(Constants.PREFIX + "whois", "Información detallada sobre un usuario. Uso: $whois @[usuario]", true);
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa " + Constants.PREFIX +  "gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
                         event.getChannel().sendMessage(embed.build()).queue(misc -> misc.addReaction("🗑️").queue());
@@ -58,51 +59,49 @@ public class ReactionEventListener extends ListenerAdapter {
                         event.getReaction().removeReaction(event.getUser()).queue();
                         EmbedBuilder embed = new EmbedBuilder();
                         embed.setTitle("Comandos divertidos");
-                        embed.addField("$getemote", "Roba emotes de otro servidor. Uso : $getemote {emote} ", true);
-                        embed.addField("$ping", "Muestra el ping que tiene el bot a los servidores de discord", true);
-                        embed.addField("$cat", "Envia una imagen random de un gato", true);
-                        embed.addField("$dog", "Envia una imagen random de un perro", true);
-                        embed.addField("$floppa", "Easter egg", true);
-                        embed.addField("$studycat", "Gato estudiante, sean como el niños", true);
-                        embed.addField("$amongus", "sus", true);
-                        embed.addField("$based", "Te dice lo basado que eres", true);
-                        embed.addField("$cope", "Te dice lo cope que eres", true);
-                        embed.addField("$cramfag", "Te dice lo cramfag que eres", true);
-                        embed.addField("$dadjoke", "Envia una dadjoke", true);
-                        embed.addField("$furry", "Envia una foto de un furro", true);
-                        embed.addField("$penis", "Te dice el % de pene que tienes (no nsfw)", true);
-                        embed.addField("$uwunzorfag", "Te dice lo uwunzorfag que eres", true);
-                        embed.addField("$virgin", "Te dice lo virgen que eres", true);
+                        embed.addField(Constants.PREFIX + "getemote", "Roba emotes de otro servidor. Uso : $getemote {emote} ", true);
+                        embed.addField(Constants.PREFIX + "ping", "Muestra el ping que tiene el bot a los servidores de discord", true);
+                        embed.addField(Constants.PREFIX + "floppa", "Easter egg", true);
+                        embed.addField(Constants.PREFIX + "studycat", "Gato estudiante, sean como el niños", true);
+                        embed.addField(Constants.PREFIX + "amongus", "sus", true);
+                        embed.addField(Constants.PREFIX + "based", "Te dice lo basado que eres", true);
+                        embed.addField(Constants.PREFIX + "cope", "Te dice lo cope que eres", true);
+                        embed.addField(Constants.PREFIX + "cramfag", "Te dice lo cramfag que eres", true);
+                        embed.addField(Constants.PREFIX + "dadjoke", "Envia una dadjoke", true);
+                        embed.addField(Constants.PREFIX + "furry", "Envia una foto de un furro", true);
+                        embed.addField(Constants.PREFIX + "penis", "Te dice el % de pene que tienes (no nsfw)", true);
+                        embed.addField(Constants.PREFIX + "uwunzorfag", "Te dice lo uwunzorfag que eres", true);
+                        embed.addField(Constants.PREFIX + "virgin", "Te dice lo virgen que eres", true);
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
-                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa " + Constants.PREFIX +  "gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         event.getChannel().sendMessage(embed.build()).queue(game -> game.addReaction("🗑️").queue());
                     }
                     if (emote.getEmoji().equals("🎧")) {
                         event.getReaction().removeReaction(event.getUser()).queue();
                         EmbedBuilder embed = new EmbedBuilder();
                         embed.setTitle("Voice chat commands help page");
-                        embed.addField("$lock", "Bloquea tu canal de voz para que el numero maximo de personas que pueden entrar sea el numero de personas que hay en ese momento en el canal de voz", true);
-                        embed.addField("$unlock", "Elimina el bloqueo de numero maximo de personas", true);
-                        embed.addField("$limit", "Limita el numero de personas que pueden entrar a un canal de voz al que el usuario elija. Uso: $limit {numero}", true);
-                        embed.addField("$unlimit", "Elimina el bloqueo anterior", true);
-                        embed.addField("$kickvc", "Crea una votacion para kickear a alguien de un canal de voz", true);
-                        embed.addField("$private", "Hace tu canal de voz privado, solo tu elejirás quien quiere entrar", true);
-                        embed.addField("$public", "Elimina el bloqueo anterior y hace publico el canal", true);
+                        embed.addField(Constants.PREFIX + "lock", "Bloquea tu canal de voz para que el numero maximo de personas que pueden entrar sea el numero de personas que hay en ese momento en el canal de voz", true);
+                        embed.addField(Constants.PREFIX + "unlock", "Elimina el bloqueo de numero maximo de personas", true);
+                        embed.addField(Constants.PREFIX + "limit", "Limita el numero de personas que pueden entrar a un canal de voz al que el usuario elija. Uso: $limit {numero}", true);
+                        embed.addField(Constants.PREFIX + "unlimit", "Elimina el bloqueo anterior", true);
+                        embed.addField(Constants.PREFIX + "kickvc", "Crea una votacion para kickear a alguien de un canal de voz", true);
+                        embed.addField(Constants.PREFIX + "private", "Hace tu canal de voz privado, solo tu elejirás quien quiere entrar", true);
+                        embed.addField(Constants.PREFIX + "public", "Elimina el bloqueo anterior y hace publico el canal", true);
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
-                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa " + Constants.PREFIX +  "gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         event.getChannel().sendMessage(embed.build()).queue(music -> music.addReaction("🗑️").queue());
                     }
                     if (emote.getEmoji().equals("🎮")) {
                         event.getReaction().removeReaction(event.getUser()).queue();
                         EmbedBuilder embed = new EmbedBuilder();
                         embed.setTitle("Comandos de 2b2t");
-                        embed.addField("$prioq", "Muestra la cola actual en 2b2t", true);
-                        embed.addField("$seen {username}", "Ultima vez visto a una persona", true);
-                        embed.addField("$stats {username}", "Muestra las estadisticas de una persona", true);
-                        embed.addField("$tab", "Envia una foto del tab de 2b2t", true);
-                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa $gethelp [nombre del comando]", event.getGuild().getIconUrl());
+                        embed.addField(Constants.PREFIX + "prioq", "Muestra la cola actual en 2b2t", true);
+                        embed.addField(Constants.PREFIX + "seen {username}", "Ultima vez visto a una persona", true);
+                        embed.addField(Constants.PREFIX + "stats {username}", "Muestra las estadisticas de una persona", true);
+                        embed.addField(Constants.PREFIX + "tab", "Envia una foto del tab de 2b2t", true);
+                        embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa " + Constants.PREFIX +  "gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
                         event.getChannel().sendMessage(embed.build()).queue(game -> game.addReaction("🗑️").queue());
@@ -121,15 +120,15 @@ public class ReactionEventListener extends ListenerAdapter {
                         if (hasPerms2) {
                             EmbedBuilder embed = new EmbedBuilder();
                             embed.setTitle("Administration commands help page");
-                            embed.addField("$purge", "Purges specified messages if you have enough perms usage !purge {number}", true);
-                            embed.addField("$shutdown", "Stops the bot if you have enough perms", true);
-                            embed.addField("$saveconfig [client|bot] {version}", "Saves or modifies the config if you have enough perms", true);
-                            embed.addField("$priopeek", "Enables / disables queue peek on bot status", true);
-                            embed.addField("$create", "Creates an interactive voice chat", true);
-                            embed.addField("$template", "Please, if you dont know what are doing dont touch anything", true);
-                            embed.addField("$kick", "Creo que no necesita explicación", true);
-                            embed.addField("$ban", "Creo que tampoco necesita explicación", true);
-                            embed.addField("$setrpc", "Cambia el rpc del bot", true);
+                            embed.addField(Constants.PREFIX + "purge", "Purges specified messages if you have enough perms usage !purge {number}", true);
+                            embed.addField(Constants.PREFIX + "shutdown", "Stops the bot if you have enough perms", true);
+                            embed.addField(Constants.PREFIX + "saveconfig [client|bot] {version}", "Saves or modifies the config if you have enough perms", true);
+                            embed.addField(Constants.PREFIX + "priopeek", "Enables / disables queue peek on bot status", true);
+                            embed.addField(Constants.PREFIX + "create", "Creates an interactive voice chat", true);
+                            embed.addField(Constants.PREFIX + "template", "Please, if you dont know what are doing dont touch anything", true);
+                            embed.addField(Constants.PREFIX + "kick", "Creo que no necesita explicación", true);
+                            embed.addField(Constants.PREFIX + "ban", "Creo que tampoco necesita explicación", true);
+                            embed.addField(Constants.PREFIX + "setrpc", "Cambia el rpc del bot", true);
                             embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                             embed.setColor(7279795);
                             event.getChannel().sendMessage(embed.build()).queue(adm -> adm.addReaction("🗑️").queue());
@@ -149,7 +148,6 @@ public class ReactionEventListener extends ListenerAdapter {
                     if (emote.getEmoji().equals("🗑️")) {
                         event.getChannel().deleteMessageById(message.getId()).queue();
                     }
-
 
                     }}});}}
                     /*

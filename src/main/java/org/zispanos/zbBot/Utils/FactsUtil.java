@@ -12,6 +12,9 @@ public class FactsUtil {
     private static String penis;
     private static String ball;
     private static String furrynsfw;
+    private static String fuck;
+    private static String furryfuck;
+    private static String gayfurryfuck;
 
 
     public static String getFact() {
@@ -80,6 +83,33 @@ public class FactsUtil {
         prevNum = randomNum;
         furrynsfw = Constants.furry.get(randomNum);
         return furrynsfw;
+    }
+    public static String getFuck() {
+        randomNum = (int) (Math.random() * (16));
+        if (randomNum == prevNum) {
+            randomNum = (int) (Math.random() * (16));
+        }
+        prevNum = randomNum;
+        fuck = Constants.fuck.get(randomNum);
+        return fuck;
+    }
+    public static String getFurryfuck() {
+        randomNum = (int) (Math.random() * (1660));
+        if (randomNum == prevNum) {
+            randomNum = (int) (Math.random() * (1660));
+        }
+        prevNum = randomNum;
+        furryfuck = Constants.furryfuck.get(randomNum);
+        return furryfuck;
+    }
+    public static String getGayfurryfuck() {
+        randomNum = (int) (Math.random() * (1660));
+        if (randomNum == prevNum) {
+            randomNum = (int) (Math.random() * (1660));
+        }
+        prevNum = randomNum;
+        gayfurryfuck = Constants.gayfurryfuck.get(randomNum);
+        return gayfurryfuck;
     }
 
     public static void Load() {
@@ -473,6 +503,26 @@ public class FactsUtil {
         Constants.ball.add("❌ Mis fuentes me dicen que no");
         Constants.ball.add("❌ Las perspectivas no son buenas");
         Constants.ball.add("❌ Muy dudoso");
+
+        /*  FUCK    */
+
+        Constants.fuck.add("https://31.media.tumblr.com/8fbe7f0ab39a0ba519ab04129912b488/tumblr_mrbilxGyXh1sehjzto1_500.gif");
+        Constants.fuck.add("https://media.discordapp.net/attachments/602747804418572289/688859209676095494/26.gif");
+        Constants.fuck.add("https://imgur.com/WVzAidp");
+        Constants.fuck.add("https://media.discordapp.net/attachments/793824080331669525/796265995207311390/2.gif");
+        Constants.fuck.add("https://imgur.com/7MZNyNy");
+        Constants.fuck.add("https://media.discordapp.net/attachments/793824080331669525/793925626063093820/47.gif");
+        Constants.fuck.add("https://imgur.com/mbKXlRS");
+        Constants.fuck.add("https://64.media.tumblr.com/24181cc468ff85d172285673068a2fb5/tumblr_pj0sspVydm1xotgrao1_1280.gif");
+        Constants.fuck.add("https://imgur.com/1h31BqU");
+        Constants.fuck.add("https://imgur.com/qQbteHx");
+        Constants.fuck.add("https://78.media.tumblr.com/aa1d4bf5533749ed21be0fd9deda62ac/tumblr_p4w7pcBHly1tjgwy0o1_1280.gif");
+        Constants.fuck.add("https://imgur.com/9Kra5Cy");
+        Constants.fuck.add("https://64.media.tumblr.com/58690d191a74a2f09d703d08490a6753/tumblr_p3dr6m0NNX1wlpy92o7_500.gif");
+        Constants.fuck.add("https://media.discordapp.net/attachments/602747804418572289/688859179414585373/27.gif");
+        Constants.fuck.add("https://64.media.tumblr.com/24181cc468ff85d172285673068a2fb5/tumblr_pj0sspVydm1xotgrao1_1280.gif");
+
+
 
         /*  FURRY   */
 
