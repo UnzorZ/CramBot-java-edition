@@ -3,16 +3,21 @@ package org.zispanos.zbBot;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.ReadyEvent;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zispanos.zbBot.Objects.Constants;
+import org.zispanos.zbBot.Utils.RandomColorUtil;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
@@ -128,10 +133,6 @@ class Listener extends ListenerAdapter {
             event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
             event.getChannel().sendMessage(embed.build()).queue();
             return;
-        }
-        if (msg.contains("uwunzor.net".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
         }
     }
     @Override
