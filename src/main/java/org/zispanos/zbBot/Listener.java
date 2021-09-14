@@ -134,6 +134,26 @@ class Listener extends ListenerAdapter {
             event.getChannel().sendMessage(embed.build()).queue();
             return;
         }
+        if (msg.contains("7b".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
+        if (msg.contains("crackedanarchy".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
+        if (msg.contains("latanarquia".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
+        if (msg.contains("qbasty".toLowerCase(Locale.ROOT))) {
+            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            event.getChannel().sendMessage(embed.build()).queue();
+            return;
+        }
     }
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
