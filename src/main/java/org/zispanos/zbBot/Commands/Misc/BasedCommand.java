@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.zispanos.zbBot.Objects.ICommand;
 import org.zispanos.zbBot.Utils.FactsUtil;
+import org.zispanos.zbBot.Utils.RandomColorUtil;
 
 import java.awt.*;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class BasedCommand implements ICommand{
             EmbedBuilder embed = new EmbedBuilder();
             embed.setDescription(FactsUtil.getPorcentajes() + " based.");
             embed.setAuthor(event.getAuthor().getAsTag(), "https://www.youtube.com/watch?v=dQw4w9WgXcQ", event.getAuthor().getAvatarUrl());
-            embed.setColor(Color.pink);
+            embed.setColor(RandomColorUtil.getRandomColor());
             event.getChannel().sendMessage(embed.build()).queue();
     }
 
