@@ -3,20 +3,12 @@ package org.zispanos.zbBot;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.json.JSONException;
 import org.zispanos.zbBot.Commands.Administration.*;
-import org.zispanos.zbBot.Commands.C2b2t.PrioqCommand;
-import org.zispanos.zbBot.Commands.C2b2t.SeenCommand;
-import org.zispanos.zbBot.Commands.C2b2t.StatsCommand;
-import org.zispanos.zbBot.Commands.C2b2t.TabCommand;
+import org.zispanos.zbBot.Commands.C2b2t.*;
 import org.zispanos.zbBot.Commands.Misc.*;
-import org.zispanos.zbBot.Commands.Music.JoinCommand;
-import org.zispanos.zbBot.Commands.NSFW.FuckCommand;
-import org.zispanos.zbBot.Commands.NSFW.FurryNSFWCommand;
-import org.zispanos.zbBot.Commands.infoEmbeds.RanksCommand;
-import org.zispanos.zbBot.Commands.infoEmbeds.ReglasCommand;
-import org.zispanos.zbBot.Commands.infoEmbeds.VerifyCommand;
+import org.zispanos.zbBot.Commands.NSFW.*;
+import org.zispanos.zbBot.Commands.infoEmbeds.*;
 import org.zispanos.zbBot.Objects.Constants;
 import org.zispanos.zbBot.Objects.ICommand;
-import org.zispanos.zbBot.Commands.infoEmbeds.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -73,7 +65,6 @@ public class CommandManager {
         addCommand(new PreguntaDelDiaEmbedCommand());
         addCommand(new FuckCommand());
         addCommand(new UserInfoCommand());
-        addCommand(new JoinCommand());
     }
 
     private void addCommand(ICommand command) {
