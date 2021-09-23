@@ -1,6 +1,7 @@
 package org.zispanos.zbBot.Commands.Misc;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.zispanos.zbBot.Objects.ICommand;
@@ -17,17 +18,19 @@ public class AvatarCommand implements ICommand{
 
         User author = event.getAuthor();
         String msg = event.getMessage().getContentRaw();
+        Member target = event.getMessage().getMentionedMembers().get(0);
+        System.out.println("test");
 
         event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
          if (msg.contains("av".toLowerCase(Locale.ROOT))) {
              event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
              EmbedBuilder embed22 = new EmbedBuilder();
-             embed22.setTitle("Avatar from " + author.getName());
-             embed22.setThumbnail(event.getAuthor().getEffectiveAvatarUrl());
+             embed22.setTitle("Avatar from " + target.getEffectiveName());
+             embed22.setDescription(target.getUser().getAsMention());
+             embed22.setThumbnail(target.getUser().getAvatarUrl());
              embed22.setColor(Color.RED);
              event.getChannel().sendMessage(embed22.build()).queue();
-             return;
-        }
+         }
 
     }
 

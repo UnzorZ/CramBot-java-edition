@@ -65,6 +65,7 @@ public class CommandManager {
         addCommand(new PreguntaDelDiaEmbedCommand());
         addCommand(new FuckCommand());
         addCommand(new UserInfoCommand());
+        addCommand(new AvatarCommand());
     }
 
     private void addCommand(ICommand command) {
