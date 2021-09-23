@@ -26,7 +26,6 @@ public class UserInfoCommand implements ICommand {
         List RoleList = target.getRoles();
         int numberroles = RoleList.size();
         String permisos = String.valueOf(target.getPermissionsExplicit());
-        String boosted = target.getTimeBoosted().format(DateTimeFormatter.ofPattern("yyyy-mm-dd"));
 
 
         if (args.isEmpty()) {
@@ -46,7 +45,6 @@ public class UserInfoCommand implements ICommand {
             embed.addField("Fecha de entrada al servidor: ", target.getTimeJoined().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), false);
             embed.addField("Rol mas alto: ", "<@&" + idrol + ">", false);
             embed.addField("Roles[" + numberroles + "]: ",getRolesAsString(target.getRoles()), false);
-            embed.addField("Boosteando desde: ", String.valueOf(boosted), false);
             embed.setThumbnail(target.getUser().getAvatarUrl());
             embed.setColor(target.getColor());
             event.getChannel().sendMessage(embed.build()).queue();

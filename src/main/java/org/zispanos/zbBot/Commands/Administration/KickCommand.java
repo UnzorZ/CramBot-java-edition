@@ -22,7 +22,7 @@ public class KickCommand implements ICommand {
         boolean kickeable = true;
         boolean hasPerms = false;
         String msg = event.getMessage().getContentRaw();
-
+        String msg3 = "";
         for (String role : Constants.OProles) {
             if (MemberUtil.getRole(Objects.requireNonNull(event.getMember()), role) != null) {
 
@@ -33,7 +33,6 @@ public class KickCommand implements ICommand {
         if (hasPerms) {
 
             if (msg.startsWith("$kick ")) {
-
                 String msg2 = event.getMessage().getContentRaw().replace("<", "").replace(">", "").replace("@", "").replace("!", "").replace("$kick ", "");
 
                 if (msg2.equals("758441764121608202")) {    /*  Unzor   */
@@ -72,7 +71,7 @@ public class KickCommand implements ICommand {
                     event.getChannel().sendMessage(embed.build()).queue();
                 }
                 if (kickeable) {
-                    event.getGuild().kick(msg2).queue();
+                    event.getGuild().kick(msg3).queue();
                     EmbedBuilder embed = new EmbedBuilder();
                     embed.setTitle("Usuario kickeado");
                     embed.setDescription("Kickeado por: " + event.getMessage().getAuthor().getName());

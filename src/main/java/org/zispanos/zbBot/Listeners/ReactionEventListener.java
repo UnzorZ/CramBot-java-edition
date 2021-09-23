@@ -45,10 +45,8 @@ public class ReactionEventListener extends ListenerAdapter {
                         embed.addField(Constants.PREFIX + "botinfo", "Muestra informacion sobre el bot", true);
                         embed.addField(Constants.PREFIX + "ranks", "Obten información de los rangos del servidor de MrCramYT", true);
                         embed.addField(Constants.PREFIX + "avatar/$av", "Envia tu avatar", true);
-                        embed.addField(Constants.PREFIX + "info", "Envia información en tiempo real acerca del bot", true);
-                        embed.addField(Constants.PREFIX + "serverinfo", "Envia información sobre el servidor. Comando acortado: $si", true);
-                        embed.addField(Constants.PREFIX + "vote", "Inicia una votación. Uso: $vote. El bot te preguntará como quieres la votación acto seguido", true);
-                        embed.addField(Constants.PREFIX + "whois", "Información detallada sobre un usuario. Uso: $whois @[usuario]", true);
+                        embed.addField(Constants.PREFIX + "serverinfo", "Envia información sobre el servidor.", true);
+                        embed.addField(Constants.PREFIX + "ui", "Información detallada sobre un usuario. Uso: $ui @usuario", true);
                         embed.setFooter("Para una descripción mas concreta sobre algun modulo, por favor, usa " + Constants.PREFIX +  "gethelp [nombre del comando]", event.getGuild().getIconUrl());
                         embed.setThumbnail("https://images-ext-1.discordapp.net/external/9JFZB8ciu6xnUwZ6_oPp3FBJ_jnM1WBillvAvxaTYjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/812711414212722719/0c0cc2e334708a2e8ac28b6cc73747b2.png");
                         embed.setColor(7279795);
