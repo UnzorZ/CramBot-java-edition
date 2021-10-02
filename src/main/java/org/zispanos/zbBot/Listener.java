@@ -41,6 +41,7 @@ class Listener extends ListenerAdapter {
         User author = event.getAuthor();
         Message message = event.getMessage();
         String content = message.getContentDisplay();
+        String guildid = event.getGuild().getId();
 
         if (event.isFromType(ChannelType.TEXT)) {
 
@@ -69,90 +70,92 @@ class Listener extends ListenerAdapter {
                 event.getChannel().sendMessage(("Hola " + msg.replace("yo soy ", "") + ", soy el CramBot.").replaceAll("\\s+", " ")).queue();
             }
         }
+        if (guildid.equals("432645641441640448")) {
 
-        EmbedBuilder embed = new EmbedBuilder();
-        embed.setTitle("No esta permitido decir esta palabra en este servidor " + author.getName());
-        embed.setColor(Color.RED);
-
-
-        if (msg.contains(".aternos".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains(". aternos".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-
-
-        if (msg.contains(". at3rn0s".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-
-        if (msg.contains(". a t e r n o s".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains(".at3rnos".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains(".atern0s".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains(".at3rn0s".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains(".a t e r n o s".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("punto aternos".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+            EmbedBuilder embed = new EmbedBuilder();
+            embed.setTitle("No esta permitido decir esta palabra en este servidor " + author.getName());
             embed.setColor(Color.RED);
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains(".holly.".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("punto me".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("7b".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("crackedanarchy".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("latanarquia".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
-        }
-        if (msg.contains("qbasty".toLowerCase(Locale.ROOT))) {
-            event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
-            event.getChannel().sendMessage(embed.build()).queue();
-            return;
+
+
+            if (msg.contains(".aternos".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains(". aternos".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+
+
+            if (msg.contains(". at3rn0s".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+
+            if (msg.contains(". a t e r n o s".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains(".at3rnos".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains(".atern0s".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains(".at3rn0s".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains(".a t e r n o s".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains("punto aternos".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                embed.setColor(Color.RED);
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains(".holly.".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains("punto me".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains("7b".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains("crackedanarchy".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains("latanarquia".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
+            if (msg.contains("qbasty".toLowerCase(Locale.ROOT))) {
+                event.getChannel().deleteMessageById(event.getMessageIdLong()).queue();
+                event.getChannel().sendMessage(embed.build()).queue();
+                return;
+            }
         }
     }
     @Override
