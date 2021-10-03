@@ -17,6 +17,7 @@ import org.zispanos.zbBot.Utils.RandomColorUtil;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
@@ -156,6 +157,16 @@ class Listener extends ListenerAdapter {
                 event.getChannel().sendMessage(embed.build()).queue();
                 return;
             }
+        }
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(System.currentTimeMillis() - System.currentTimeMillis());
+        int mYear = c.get(Calendar.YEAR) - 1970;
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH) - 1;
+        if (mYear < 0) {
+            mYear = 0;
+            mMonth = 0;
+            mDay = 0;
         }
     }
     @Override
