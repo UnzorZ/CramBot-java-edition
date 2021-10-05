@@ -31,56 +31,58 @@ public class BanCommand implements ICommand {
             }
         }
         if (hasPerms) {
+            if (event.getGuild().getId().equals("432645641441640448")) {
 
-            if (msg.startsWith("$ban ")) {
+                if (msg.startsWith("$ban ")) {
 
-                String msg2 = event.getMessage().getContentRaw().replace("<", "").replace(">", "").replace("@", "").replace("!", "").replace("$ban ", "");
+                    String msg2 = event.getMessage().getContentRaw().replace("<", "").replace(">", "").replace("@", "").replace("!", "").replace("$ban ", "");
 
-                if (msg2.equals("758441764121608202")) {    /*  Unzor   */
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.setTitle("No tienes permiso para banear a este usuario");
-                    embed.setColor(Color.RED);
-                    baneable = false;
-                    event.getChannel().sendMessage(embed.build()).queue();
+                    if (msg2.equals("758441764121608202")) {    /*  Unzor   */
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("No tienes permiso para banear a este usuario");
+                        embed.setColor(Color.RED);
+                        baneable = false;
+                        event.getChannel().sendMessage(embed.build()).queue();
+                    }
+                    if (msg2.equals("697040773203623976")) {    /*  Cobble  */
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("No tienes permiso para banear a este usuario");
+                        embed.setColor(Color.RED);
+                        baneable = false;
+                        event.getChannel().sendMessage(embed.build()).queue();
+                    }
+                    if (msg2.equals("512347088210886659")) {    /*  Empa    */
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("No tienes permiso para banear a este usuario");
+                        embed.setColor(Color.RED);
+                        baneable = false;
+                        event.getChannel().sendMessage(embed.build()).queue();
+                    }
+                    if (msg2.equals("315214772347863041")) {    /*  Omega   */
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("No tienes permiso para banear a este usuario");
+                        embed.setColor(Color.RED);
+                        baneable = false;
+                        event.getChannel().sendMessage(embed.build()).queue();
+                    }
+                    if (msg2.equals("573138159391735819")) {     /*  0na */
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("No tienes permiso para banear a este usuario");
+                        embed.setColor(Color.RED);
+                        baneable = false;
+                        event.getChannel().sendMessage(embed.build()).queue();
+                    }
+                    if (baneable) {
+                        event.getGuild().ban(msg2, 0, "ban command").queue();
+                        EmbedBuilder embed = new EmbedBuilder();
+                        embed.setTitle("Usuario baneado");
+                        embed.setDescription("Baneado por: " + event.getMessage().getAuthor().getName());
+                        embed.setImage("https://cdn.discordapp.com/attachments/537614559784206340/875420303075966996/depositphotos_11528485-stock-photo-red-ban-button-and-hand.jpg");
+                        embed.setColor(RandomColorUtil.getRandomColor());
+                        event.getChannel().sendMessage(embed.build()).queue();
+                    }
+                    baneable = true;
                 }
-                if (msg2.equals("697040773203623976")) {    /*  Cobble  */
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.setTitle("No tienes permiso para banear a este usuario");
-                    embed.setColor(Color.RED);
-                    baneable = false;
-                    event.getChannel().sendMessage(embed.build()).queue();
-                }
-                if (msg2.equals("512347088210886659")) {    /*  Empa    */
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.setTitle("No tienes permiso para banear a este usuario");
-                    embed.setColor(Color.RED);
-                    baneable = false;
-                    event.getChannel().sendMessage(embed.build()).queue();
-                }
-                if (msg2.equals("315214772347863041")) {    /*  Omega   */
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.setTitle("No tienes permiso para banear a este usuario");
-                    embed.setColor(Color.RED);
-                    baneable = false;
-                    event.getChannel().sendMessage(embed.build()).queue();
-                }
-                if (msg2.equals("573138159391735819")) {     /*  0na */
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.setTitle("No tienes permiso para banear a este usuario");
-                    embed.setColor(Color.RED);
-                    baneable = false;
-                    event.getChannel().sendMessage(embed.build()).queue();
-                }
-                if (baneable) {
-                    event.getGuild().ban(msg2, 0, "ban command").queue();
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.setTitle("Usuario baneado");
-                    embed.setDescription("Baneado por: " + event.getMessage().getAuthor().getName());
-                    embed.setImage("https://cdn.discordapp.com/attachments/537614559784206340/875420303075966996/depositphotos_11528485-stock-photo-red-ban-button-and-hand.jpg");
-                    embed.setColor(RandomColorUtil.getRandomColor());
-                    event.getChannel().sendMessage(embed.build()).queue();
-                }
-                baneable = true;
             }
         }
     }
