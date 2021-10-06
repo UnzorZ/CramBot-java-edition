@@ -58,7 +58,7 @@ public class CommandManager {
         addCommand(new BallCommand());
         //addCommand(new EmbedCreatorCommand());
         addCommand(new setRPCCommand());
-        addCommand(new BanCommand());
+        //addCommand(new BanCommand());
         addCommand(new PreguntadeldiaCommand());
         addCommand(new KickCommand());
         addCommand(new FurryNSFWCommand());
@@ -66,6 +66,8 @@ public class CommandManager {
         addCommand(new FuckCommand());
         addCommand(new UserInfoCommand());
         addCommand(new AvatarCommand());
+        addCommand(new PinCommand());
+        addCommand(new UnbanCommand());
     }
 
     private void addCommand(ICommand command) {
