@@ -94,5 +94,9 @@ public class Main extends ListenerAdapter {
         }
     }
     @Override
-    
+public void onPrivateMessageReceived(PrivateMessageReceivedEvent event) {
+    event.getChannel().sendMessage("Test");
+    event.get
+    return;
+}
 }
