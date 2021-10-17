@@ -96,6 +96,6 @@ public class Main extends ListenerAdapter {
     @Override
 public void onPrivateMessageReceived(PrivateMessageReceivedEvent event) {
     event.getChannel().sendMessage("Test");
-    event.getChannel().sendMessage("Another test lol"):
+    event.getChannel().sendMessage("Another test lol");
 }
 }
