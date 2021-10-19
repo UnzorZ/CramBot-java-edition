@@ -124,7 +124,9 @@ public class Main extends ListenerAdapter {
     @Override
     public void onPrivateMessageReceived(PrivateMessageReceivedEvent event) {
         if (!event.getAuthor().isBot()) {
-            if (event.getAuthor.getId().equals(""))
+            if (event.getAuthor.getId().equals("758441764121608202")) {
+                return;
+            }
             String servercramid = "432645641441640448";
             String unzorid = "758441764121608202";
             Guild guild = event.getJDA().getGuildById(servercramid);
