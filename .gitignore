@@ -128,3 +128,4 @@ gradle-app.setting
 src/main/java/org/zispanos/zbBot/Main.java
 src/main/java/org/zispanos/zbBot/TOKEN.java
 .idea/inspectionProfiles/Project_Default.xml
+src/main/java/dev/unzor/crambot/TOKEN.java
